@@ -1,9 +1,9 @@
 #include <stdlib.h>
 #include "simple_list.h"
 
-list_t *init_list(void)
+sl_list_t *init_list(void)
 {
-    list_t *list = malloc(sizeof(list_t));
+    sl_list_t *list = malloc(sizeof(sl_list_t));
 
     if (!list)
         return NULL;

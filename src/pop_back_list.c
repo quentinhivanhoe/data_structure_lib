@@ -1,7 +1,7 @@
 #include "simple_list.h"
 #include <stdlib.h>
 
-void pop_back_list(list_t **list)
+void pop_back_list(sl_list_t **list)
 {
     void *save_ptr = NULL;
 

@@ -4,11 +4,11 @@
 typedef struct simple_linked_list_s {
     void *data;
     struct simple_linked_list_s *next;
-} list_t;
+} sl_list_t;
 
-list_t *init_list(void);
-void free_list(list_t *list);
-void append_list(list_t **list, void *data);
-void pop_back_list(list_t **list);
+sl_list_t *init_list(void);
+void free_list(sl_list_t *list);
+void append_list(sl_list_t **list, void *data);
+void pop_back_list(sl_list_t **list);
 
 #endif

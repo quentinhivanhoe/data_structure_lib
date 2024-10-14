@@ -1,7 +1,7 @@
 #include "simple_list.h"
 #include <stddef.h>
 
-void append_list(list_t **list, void *data)
+void append_list(sl_list_t **list, void *data)
 {
     void *save_ptr = NULL;
 

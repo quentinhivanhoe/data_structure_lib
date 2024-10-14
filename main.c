@@ -4,7 +4,7 @@
 
 int main(void)
 {
-    list_t *list = init_list();
+    sl_list_t *list = init_list();
     int test = 1;
     int num = 30;
     list->data = &test;
