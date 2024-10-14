@@ -3,7 +3,7 @@
 
 list_t *init_list(void)
 {
-    list_t *list = malloc(sizeof(list));
+    list_t *list = malloc(sizeof(list_t));
 
     if (!list)
         return NULL;

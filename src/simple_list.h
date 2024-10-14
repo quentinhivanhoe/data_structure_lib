@@ -7,5 +7,6 @@ typedef struct simple_linked_list_s {
 } list_t;
 
 list_t *init_list(void);
+void free_list(list_t *list);
 
 #endif
