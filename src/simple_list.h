@@ -8,5 +8,6 @@ typedef struct simple_linked_list_s {
 
 list_t *init_list(void);
 void free_list(list_t *list);
+void add_in_list(list_t **list, void *data);
 
 #endif
