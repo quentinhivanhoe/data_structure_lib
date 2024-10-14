@@ -8,7 +8,7 @@ int main(void)
     int test = 1;
     int num = 30;
     list->data = &test;
-    add_in_list(&list,&num);
+    append_list(&list,&num);
 
     if (!list->next)
         printf("NULL\n");
