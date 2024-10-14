@@ -10,8 +10,14 @@ int main(void)
     list->data = &test;
     append_list(&list,&num);
 
-    if (!list->next)
-        printf("NULL\n");
+    printf("%i\n", *(int *)list->data);
+    printf("%i\n", *(int *)list->next->data);
+
+    pop_back_list(&list);
+    if(list->next == NULL)
+        printf("Last node correctly delete\n");
+    
+    append_list(&list, &num);
     printf("%i\n", *(int *)list->data);
     printf("%i\n", *(int *)list->next->data);
     free_list(list);

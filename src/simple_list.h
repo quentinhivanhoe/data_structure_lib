@@ -9,5 +9,6 @@ typedef struct simple_linked_list_s {
 list_t *init_list(void);
 void free_list(list_t *list);
 void append_list(list_t **list, void *data);
+void pop_back_list(list_t **list);
 
 #endif
