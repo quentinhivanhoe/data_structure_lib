@@ -1,7 +1,7 @@
-#include "simple_list.h"
+#include "singly_linked_list.h"
 #include <stdlib.h>
 
-void free_list(sl_list_t *list)
+void free_sllist(sl_list_t *list)
 {
     void *save_ptr = NULL;
 

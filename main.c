@@ -1,25 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "src/simple_list.h"
+#include "src/singly_linked_list.h"
 
 int main(void)
 {
-    sl_list_t *list = init_list();
+    sl_list_t *list = init_sllist();
     int test = 1;
     int num = 30;
     list->data = &test;
-    append_list(&list,&num);
+    append_sllist(&list,&num);
 
     printf("%i\n", *(int *)list->data);
     printf("%i\n", *(int *)list->next->data);
 
-    pop_back_list(&list);
+    popBack_sllist(&list);
     if(list->next == NULL)
         printf("Last node correctly delete\n");
     
-    append_list(&list, &num);
+    append_sllist(&list, &num);
     printf("%i\n", *(int *)list->data);
     printf("%i\n", *(int *)list->next->data);
-    free_list(list);
+    free_sllist(list);
     return 0;
 }
