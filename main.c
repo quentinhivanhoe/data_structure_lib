@@ -10,13 +10,6 @@ int main(void)
     list->data = test;
 
     append_sllist(&list,str);
-    callback_sllist(list, &print_sllist_str);
-    printf("-------\n");
-    popBack_sllist(&list);
-    callback_sllist(list, &print_sllist_str);    
-    append_sllist(&list, str);
-    printf("-------\n");
-    callback_sllist(list, &print_sllist_str);
     free_sllist(list);
     return 0;
 }
