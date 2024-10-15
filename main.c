@@ -5,21 +5,18 @@
 int main(void)
 {
     sl_list_t *list = init_sllist();
-    int test = 1;
-    int num = 30;
-    list->data = &test;
-    append_sllist(&list,&num);
+    char *test = "bonjour";
+    char *str = "au revoir";
+    list->data = test;
 
-    printf("%i\n", *(int *)list->data);
-    printf("%i\n", *(int *)list->next->data);
-
+    append_sllist(&list,str);
+    callback_sllist(list, &print_sllist_str);
+    printf("-------\n");
     popBack_sllist(&list);
-    if(list->next == NULL)
-        printf("Last node correctly delete\n");
-    
-    append_sllist(&list, &num);
-    printf("%i\n", *(int *)list->data);
-    printf("%i\n", *(int *)list->next->data);
+    callback_sllist(list, &print_sllist_str);    
+    append_sllist(&list, str);
+    printf("-------\n");
+    callback_sllist(list, &print_sllist_str);
     free_sllist(list);
     return 0;
 }
