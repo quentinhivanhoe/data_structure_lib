@@ -1,7 +1,7 @@
 #include "singly_linked_list.h"
 #include <stdio.h>
 
-void print_sllist_nbr(sl_list_t *list)
+void print_sll_nbr(sll_t *list)
 {
     if (!list)
         return;
@@ -10,7 +10,7 @@ void print_sllist_nbr(sl_list_t *list)
         printf("\n");
 }
 
-void print_sllist_str(sl_list_t *list)
+void print_sll_str(sll_t *list)
 {
     if (!list)
         return;

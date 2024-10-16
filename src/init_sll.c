@@ -1,9 +1,9 @@
 #include <stdlib.h>
 #include "singly_linked_list.h"
 
-sl_list_t *init_sllist(void)
+sll_t *init_sll(void)
 {
-    sl_list_t *list = malloc(sizeof(sl_list_t));
+    sll_t *list = malloc(sizeof(sll_t));
 
     if (!list)
         return NULL;

@@ -1,17 +1,18 @@
 #include "singly_linked_list.h"
-#include <stddef.h>
+#include <stdlib.h>
 
-void append_sllist(sl_list_t **list, void *data)
+void popBack_sll(sll_t **list)
 {
     void *save_ptr = NULL;
 
     if (list == NULL || (*list) == NULL)
         return;
+    if (!(*list)->next)
+        return;
     save_ptr = (*list);
-    while ((*list)->next)
+    while ((*list)->next->next)
         (*list) = (*list)->next;
-    (*list)->next = init_sllist();
-    (*list) = (*list)->next;
-    (*list)->data = data;
+    free((*list)->next);
+    (*list)->next = NULL;
     (*list) = save_ptr;
 }

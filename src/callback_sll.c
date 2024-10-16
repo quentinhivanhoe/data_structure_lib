@@ -1,7 +1,7 @@
 #include "singly_linked_list.h"
 #include <stddef.h>
 
-void callback_sllist(sl_list_t *list, void (*callback)(sl_list_t *))
+void callback_sll(sll_t *list, void (*callback)(sll_t *))
 {
     void *save_ptr = NULL;
 

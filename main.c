@@ -4,12 +4,13 @@
 
 int main(void)
 {
-    sl_list_t *list = init_sllist();
+    sll_t *list = init_sll();
     char *test = "bonjour";
     char *str = "au revoir";
     list->data = test;
 
-    append_sllist(&list,str);
-    free_sllist(list);
+    append_sll(&list,str);
+    callback_sll(list, &print_sll_str);
+    free_sll(list);
     return 0;
 }
