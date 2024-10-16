@@ -1,5 +1,7 @@
 #ifndef SINGLY_LINKED_LIST_H_
     #define SINGLY_LINKED_LIST_H_
+    #include <stdbool.h>
+    #include <stddef.h>
 
 typedef struct singly_linked_list_s {
     void *data;
@@ -15,5 +17,8 @@ void popBack_sll(sll_t **list);
 void print_sll_nbr(sll_t *list);
 void print_sll_str(sll_t *list);
 void callback_sll(sll_t *list, void (*callback)(sll_t *));
+void *get_data_int(sll_t *list, void *data);
+void *sll_get_data(sll_t *list, void *key, void *(*cmp_func)(sll_t *, void *));
+void *get_data_str(sll_t *list, void *data);
 
 #endif
