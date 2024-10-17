@@ -8,6 +8,8 @@ typedef struct singly_linked_list_s {
     struct singly_linked_list_s *next;
 } sll_t;
 
+typedef void (*upd_func)(sll_t *, void *, void *);
+
 typedef void (*sll_printer)(sll_t *);
 sll_t *init_sll(void);
 void free_sll(sll_t *list);
@@ -20,8 +22,7 @@ void callback_sll(sll_t *list, void (*callback)(sll_t *));
 void *get_data_int(sll_t *list, void *data);
 void *sll_get_data(sll_t *list, void *key, void *(*cmp_func)(sll_t *, void *));
 void *get_data_str(sll_t *list, void *data);
-void sll_update_data(sll_t **list, void *key, void *data, bool (*cmp_func)(sll_t *, void *));
-bool str_compare(sll_t *node, void *key);
-bool nbr_compare(sll_t *node, void *key);
+void sll_update_data(sll_t **list, void *key, void *data, upd_func callback);
+void upd_nbr(sll_t *node, void *key, void *data);
 
 #endif

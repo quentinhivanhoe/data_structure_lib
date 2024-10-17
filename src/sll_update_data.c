@@ -1,21 +1,23 @@
 #include "singly_linked_list.h"
 #include <string.h>
 
-bool str_compare(sll_t *node, void *key)
+void upd_nbr(sll_t *node, void *key, void *data)
 {
     if (!node)
-        return false;
-    return (!strcmp((char *)node->data, (char *)key)) ? (true) : (false);
+        return;
+    if (*(int *)node->data == *(int *)key)
+        node->data = data;
 }
 
-bool nbr_compare(sll_t *node, void *key)
+void upd_str(sll_t *node, void *key, void *data)
 {
     if (!node)
-        return false;
-    return (*(int *)node->data == *(int *)key) ? (true) : (false);
+        return;
+    if (!strcmp((char *)node->data, (char *)key))
+        node->data = data;
 }
 
-void sll_update_data(sll_t **list, void *key, void *data, bool (*cmp_func)(sll_t *, void *))
+void sll_update_data(sll_t **list, void *key, void *data, upd_func callback)
 {
     void *save_ptr = NULL;
 
@@ -23,8 +25,7 @@ void sll_update_data(sll_t **list, void *key, void *data, bool (*cmp_func)(sll_t
         return;
     save_ptr = (*list);
     while ((*list)) {
-        if (cmp_func((*list), key))
-            (*list)->data = data;
+        callback((*list), key, data);
         (*list) = (*list)->next;
     }
     (*list) = save_ptr;
