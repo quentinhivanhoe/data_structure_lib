@@ -5,18 +5,18 @@
 int main(void)
 {
     sll_t *list = init_sll();
-    // int num = 10;
-    // int nbr = 30;
-    // int test = 0;
-    char *str = "bonjour";
-    char *string = "au revoir";
-    char *word = NULL;
-    list->data = str;
+    int num = 10;
+    int nbr = 30;
+    int test = 20;
+    // char *str = "bonjour";
+    // char *string = "au revoir";
+    // char *word = "les amis !";
+    list->data = &num;
 
-    append_sll(&list, string);
-    word = (char *)sll_get_data(list, str, &get_data_int);
-    printf("word = %s\n", word);
-    callback_sll(list, &print_sll_str);
+    append_sll(&list, &nbr);
+    callback_sll(list, &print_sll_nbr);
+    sll_update_data(&list, &nbr, &test, &nbr_compare);
+    callback_sll(list, &print_sll_nbr);
     free_sll(list);
     return 0;
 }
