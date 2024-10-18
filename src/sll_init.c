@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "singly_linked_list.h"
 
-sll_t *init_sll(void)
+sll_t *sll_init(void)
 {
     sll_t *list = malloc(sizeof(sll_t));
 

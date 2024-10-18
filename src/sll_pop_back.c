@@ -1,7 +1,7 @@
 #include "singly_linked_list.h"
 #include <stdlib.h>
 
-void popBack_sll(sll_t **list)
+void sll_pop_back(sll_t **list)
 {
     void *save_ptr = NULL;
 

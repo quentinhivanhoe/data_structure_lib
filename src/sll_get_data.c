@@ -15,7 +15,7 @@ void *get_data_str(sll_t *list, void *data)
     return (!strcmp((char *)list->data, (char *)data)) ? (list->data) : (NULL);
 }
 
-void *sll_get_data(sll_t *list, void *key, void *(*cmp_func)(sll_t *, void *))
+void *sll_get_data(sll_t *list, void *key, cmp_func callback)
 {
     void *res = NULL;
     void *save_ptr = NULL;
@@ -24,7 +24,7 @@ void *sll_get_data(sll_t *list, void *key, void *(*cmp_func)(sll_t *, void *))
         return NULL;
     save_ptr = list;
     while (list) {
-        res = cmp_func(list, key);
+        res = callback(list, key);
         if (res)
             break;
         list = list->next;

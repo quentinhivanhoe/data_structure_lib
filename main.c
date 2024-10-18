@@ -4,7 +4,7 @@
 
 int main(void)
 {
-    sll_t *list = init_sll();
+    sll_t *list = sll_init();
     // int num = 10;
     // int nbr = 30;
     // int test = 20;
@@ -13,10 +13,10 @@ int main(void)
     char *word = "les amis !";
     list->data = str;
 
-    append_sll(&list, string);
-    callback_sll(list, &print_sll_str);
+    sll_append(&list, string);
+    sll_printer(list, &print_str);
     sll_update_data(&list, string, word, &upd_nbr);
-    callback_sll(list, &print_sll_str);
-    free_sll(list);
+    sll_printer(list, &print_str);
+    sll_free(list);
     return 0;
 }

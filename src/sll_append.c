@@ -1,7 +1,7 @@
 #include "singly_linked_list.h"
 #include <stddef.h>
 
-void append_sll(sll_t **list, void *data)
+void sll_append(sll_t **list, void *data)
 {
     void *save_ptr = NULL;
 
@@ -10,7 +10,7 @@ void append_sll(sll_t **list, void *data)
     save_ptr = (*list);
     while ((*list)->next)
         (*list) = (*list)->next;
-    (*list)->next = init_sll();
+    (*list)->next = sll_init();
     (*list) = (*list)->next;
     (*list)->data = data;
     (*list) = save_ptr;
