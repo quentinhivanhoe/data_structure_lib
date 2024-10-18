@@ -32,6 +32,8 @@ void sll_free(sll_t *list);
 /// @param data the new data to assign to the new node
 ///////////////////////////////////////////////////////////////////////////////
 void sll_append(sll_t **list, void *data);
+void sll_add(sll_t **list, void *data);
+void sll_insert(sll_t **list, void *data, void *key, cmp_func callback);
 
 ///////////////////////////////////////////////////////////////////////////////
 /// @brief delete the last node at the end of the singly linked list

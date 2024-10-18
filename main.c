@@ -10,12 +10,12 @@ int main(void)
     // int test = 20;
     char *str = "bonjour";
     char *string = "au revoir";
-    char *word = "les amis !";
+    char *word = "les amis";
     list->data = str;
 
-    sll_append(&list, string);
+    sll_append(&list, word);
     sll_printer(list, &print_str);
-    sll_update_data(&list, string, word, &upd_nbr);
+    sll_insert(&list, string, str, get_data_str);
     sll_printer(list, &print_str);
     sll_free(list);
     return 0;
