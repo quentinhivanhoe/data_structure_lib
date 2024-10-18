@@ -4,14 +4,13 @@
 
 int main(void)
 {
-    sll_t *list = sll_init();
+    sll_t *list = sll_new_node("bonjour", NULL);
     // int num = 10;
     // int nbr = 30;
     // int test = 20;
     char *str = "bonjour";
     char *string = "au revoir";
     char *word = "les amis";
-    list->data = str;
 
     sll_append(&list, word);
     sll_printer(list, &print_str);

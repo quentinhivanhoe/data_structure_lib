@@ -18,6 +18,7 @@ typedef void *(cmp_func)(sll_t *, void *);
 /// @note don't forget to free the new node, or call the free function on it
 ///////////////////////////////////////////////////////////////////////////////
 sll_t *sll_init(void);
+sll_t *sll_new_node(void *data, sll_t *next);
 
 ///////////////////////////////////////////////////////////////////////////////
 /// @brief free all node of the singly linked list

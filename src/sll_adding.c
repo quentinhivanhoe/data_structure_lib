@@ -42,9 +42,7 @@ void sll_insert(sll_t **list, void *data, void *key, cmp_func callback)
     while ((*list)) {
         res = callback((*list), key);
         if (res) {
-            node = sll_init();
-            node->data = data;
-            node->next = (*list)->next;
+            node = sll_new_node(data, (*list)->next);
             (*list)->next = node;
             break;
         }
